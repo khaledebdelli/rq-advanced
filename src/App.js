@@ -6,6 +6,8 @@ import Login from "./Login"
 import Stopwatch from "./Stopwatch"
 import Logger from "./Logger"
 import GPS from "./GPS"
+import WebWorker from "./WebWorker"
+import GlobalState from "./GlobalState"
 
 function App() {
   return (
@@ -26,6 +28,14 @@ function App() {
         <Stack>
           <Title>GPS</Title>
           <GPS />
+        </Stack>
+        <Stack>
+          <Title>WebWorker</Title>
+          <WebWorker />
+        </Stack>
+        <Stack>
+          <Title>Global State</Title>
+          <GlobalState />
         </Stack>
       </Container>
     </MantineProvider>

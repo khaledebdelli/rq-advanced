@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { QueryClientProvider } from "react-query"
+import { Container, MantineProvider, Stack, Title } from "@mantine/core"
+
+import client from "./client"
+import Login from "./Login"
+import Stopwatch from "./Stopwatch"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <MantineProvider theme={{ colorScheme: "dark" }}>
+      <Container>
+        <Stack>
+          <Title>Login</Title>
+          <Login />
+        </Stack>
+        <Stack>
+          <Title>Stop Watch</Title>
+          <Stopwatch />
+        </Stack>
+      </Container>
+    </MantineProvider>
+  )
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <QueryClientProvider client={client}>
+      <App />
+    </QueryClientProvider>
+  )
+}

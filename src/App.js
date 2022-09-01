@@ -19,7 +19,7 @@ function App() {
           <Stopwatch />
         </Stack>
         <Stack>
-          <Title>Stop Watch</Title>
+          <Title>Throtteled Logger</Title>
           <Logger />
         </Stack>
       </Container>
